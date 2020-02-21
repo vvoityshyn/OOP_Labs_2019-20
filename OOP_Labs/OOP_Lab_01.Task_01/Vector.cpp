@@ -4,11 +4,32 @@
 
 using namespace std;
 
+Vector::Vector()
+{
+	cout << "Vector::Vector()" << endl;
+	this->a = 0;
+	this->b = 0;
+}
+
 Vector::Vector(double a, double b)
 {
 	cout << "Vector::Vector(double a, double b)" << endl;
 	this->a = a;
 	this->b = b;
+}
+
+//Vector::Vector(const Vector* vector)
+//{
+//	cout << "Vector::Vector(const Vector* vector)" << endl;
+//	this->a = vector->a;
+//	this->b = vector->b;
+//}
+
+Vector::Vector(const Vector& vector)
+{
+	cout << "Vector::Vector(const Vector& vector)" << endl;
+	this->a = vector.a;
+	this->b = vector.b;
 }
 
 Vector::~Vector()

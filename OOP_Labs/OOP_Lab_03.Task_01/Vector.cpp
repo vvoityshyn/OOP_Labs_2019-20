@@ -13,7 +13,7 @@ Vector::Vector()
 
 Vector::Vector(double a, double b)
 {
-	cout << "Vector::Vector(double a, double b)" << endl;
+	printf("Vector::Vector(double %lf, double %lf)\n", a, b);
 	this->a = a;
 	this->b = b;
 }
@@ -50,11 +50,26 @@ void Vector::SetB(double b)
 	this->b = b;
 }
 
+double Vector::Length() const
+{
+	return sqrt(a * a + b * b);
+}
+
 Vector & Vector::operator=(const Vector &v)
 {
 	this->a = v.a;
 	this->b = v.b;
 	return *this;
+}
+
+Vector operator+(const Vector & v1, const Vector & v2)
+{
+	double a = v1.a + v2.a;
+	double b = v1.b + v2.b;
+
+	Vector v(a, b);
+
+	return v;
 }
 
 double & Vector::operator[](const int index)
@@ -78,21 +93,6 @@ Vector & Vector::operator+=(const Vector & right)
 	this->a += right.a;
 	this->b += right.b;
 	return *this;
-}
-
-double Vector::Length() const
-{
-	return sqrt(a * a + b * b);
-}
-
-Vector & operator+(const Vector & v1, const Vector & v2)
-{
-	double a = v1.a + v2.a;
-	double b = v1.b + v2.b;
-
-	Vector v(a, b);
-
-	return v;
 }
 
 bool operator < (const Vector & v1, const Vector & v2)

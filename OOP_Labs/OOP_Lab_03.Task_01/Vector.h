@@ -27,7 +27,7 @@ public:
 
 	Vector & operator = (const Vector &v);
 
-	friend Vector & operator + (const Vector &v1, const Vector &v2);
+	friend Vector operator + (const Vector &v1, const Vector &v2);
 	//friend Vector & operator - (const Vector &v1, const Vector &v2);
 	//friend double operator * (const Vector &v1, const Vector &v2);
 

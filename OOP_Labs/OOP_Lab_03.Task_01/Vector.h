@@ -1,5 +1,9 @@
 #pragma once
 
+#include <iostream>
+
+using namespace std;
+
 class Vector
 {
 private:
@@ -25,26 +29,29 @@ public:
 
 	double Length() const;
 
-	Vector & operator = (const Vector &v);
+	Vector & operator=(const Vector &v);
 
-	friend Vector operator + (const Vector &v1, const Vector &v2);
-	//friend Vector & operator - (const Vector &v1, const Vector &v2);
-	//friend double operator * (const Vector &v1, const Vector &v2);
+	friend Vector operator+(const Vector &v1, const Vector &v2);
+	//friend Vector & operator-(const Vector &v1, const Vector &v2);
+	//friend double operator*(const Vector &v1, const Vector &v2);
 
-	//friend bool operator * (const double number, const Vector &v2);
-	//friend bool operator * (const Vector &v1, const double number);
+	friend Vector operator*(const double number, const Vector &v);
+	friend Vector operator*(const Vector &v, const double number);
 
-	friend bool operator < (const Vector &v1, const Vector &v2);
-	//friend bool operator > (const Vector &v1, const Vector &v2);
-	//friend bool operator <= (const Vector &v1, const Vector &v2);
-	//friend bool operator >= (const Vector &v1, const Vector &v2);
+	friend bool operator<(const Vector &v1, const Vector &v2);
+	//friend bool operator>(const Vector &v1, const Vector &v2);
+	//friend bool operator<=(const Vector &v1, const Vector &v2);
+	//friend bool operator>=(const Vector &v1, const Vector &v2);
+	//friend bool operator==(const Vector &v1, const Vector &v2);
+	//friend bool operator!=(const Vector &v1, const Vector &v2);
 
-	double & operator[] (const int index);
+	double & operator[](const int index);
+	const double & operator[](const int index) const;
 
 	Vector& operator+=(const Vector& right);
 	//Vector& operator-=(const Vector& right);
 	//Vector& operator*=(const double number);
 
-	//friend ostream & operator << (ostream &out, const Vector &v);
+	friend ostream & operator<<(ostream &out, const Vector &v);
 };
 

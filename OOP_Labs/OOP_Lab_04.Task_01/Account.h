@@ -26,6 +26,7 @@ public:
 	const char* GetOwnerAddress() const;
 
 	const double GetAmount() const;
+
 	void IncAmount(const double amount);
 	void DecAmount(const double amount);
 

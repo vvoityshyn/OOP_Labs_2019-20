@@ -6,7 +6,7 @@ class DepositAccount :	public Account
 {
 private:
 	double rate;
-	Date creationDate;
+	Date *creationDate;
 	const int N = 1;
 protected:
 	// date2 - date1
@@ -21,6 +21,8 @@ public:
 		const Date &creationDate);
 	
 	~DepositAccount();
+
+	const double GetAmount() const;
 
 	/*
 		Validation rule: creationDate <= date
@@ -37,4 +39,7 @@ public:
 		https://en.wikipedia.org/wiki/Compound_interest
 	*/
 	const double GetAmount(const Date &date) const;
+
+	friend ostream & operator<<(ostream &out, const DepositAccount &v);
+
 };

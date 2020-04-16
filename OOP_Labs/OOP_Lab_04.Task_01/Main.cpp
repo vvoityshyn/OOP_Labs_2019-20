@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 
 #include "Account.h"
 #include "DepositAccount.h"
@@ -11,6 +11,14 @@ void TestDepositAccount();
 
 int main()
 {
+	/*
+		ToDo:
+			1. Validation for date
+			2. IncAmount() && DecAmount() for date
+			3. Динамічне / статичне зв'язування
+			4. UML class diagram
+	*/
+
 	cout << "OOP_Lab_04.Task_01" << endl;
 
 	//TestAccount();
@@ -53,11 +61,15 @@ void TestDepositAccount()
 	char ownerAddress[] = "Lviv, Ukraine";
 	double amount = 100.0;
 	double rate = 0.1;
-	Date date;
+	Date creationDate(2017, 2, 2);
+	Date date(2020, 4, 16);
 
-	DepositAccount depositAccount(identifier, ownerName, ownerAddress, amount, rate, date);
-
-	Date date;
+	DepositAccount depositAccount(identifier, ownerName, ownerAddress, amount, rate, creationDate);
+	
 	double p = depositAccount.GetAmount(date);
+
+	cout << "Deposit account amount: " << p << endl;
+
+	cout << depositAccount << endl;
 
 }

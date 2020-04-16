@@ -2,7 +2,13 @@
 
 const int DepositAccount::GetNumberOfWholeYears(const Date & date1, const Date & date2) const
 {
-	return 2;
+	int year;
+	int month;
+	int day;
+
+	Date::Diff(date1, date2, &year, &month, &day);
+
+	return year;
 }
 
 DepositAccount::DepositAccount(
@@ -22,20 +28,39 @@ DepositAccount::DepositAccount(
 
 	this->rate = rate;
 
-	this->creationDate = creationDate;
+	this->creationDate = new Date(creationDate);
 }
 
 DepositAccount::~DepositAccount()
 {
+	delete creationDate;
 	cout << "DepositAccount::~DepositAccount()" << endl;
+}
+
+const double DepositAccount::GetAmount() const
+{
+	return Account::GetAmount();
 }
 
 const double DepositAccount::GetAmount(const Date &date) const
 {
 	double p0 = Account::GetAmount();
-	double t = this->GetNumberOfWholeYears(this->creationDate, date);
+	double t = this->GetNumberOfWholeYears(*(this->creationDate), date);
 	double r = this->rate;
 	double n = this->N;
 	double p = p0 * pow(1 + r / n, n * t);
 	return p;
+}
+
+ostream & operator<<(ostream & out, const DepositAccount & account)
+{
+	out
+		<< "Deposit bank account: " << endl
+		<< "\t" << "identifier:" << "\t" << account.GetIdentifier() << endl
+		<< "\t" << "owner name:" << "\t" << account.GetOwner() << endl
+		<< "\t" << "owner address:" << "\t" << account.GetOwnerAddress() << endl
+		<< "\t" << "amount:" << "\t" << account.GetAmount() << endl
+		<< "\t" << "interest rate:" << "\t" << account.rate << endl;
+
+	return out;
 }

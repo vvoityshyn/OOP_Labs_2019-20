@@ -10,6 +10,8 @@ private:
 	int year;	// starts from 0
 	int month; // starts from 1
 	int day;	// starts from 1
+
+	bool IsValidDate(int year, int month, int day);
 public:
 	Date(int year, int month, int day);
 	Date(const Date & date);

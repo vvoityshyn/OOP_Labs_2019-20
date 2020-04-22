@@ -40,6 +40,9 @@ public:
 	*/
 	const double GetAmount(const Date &date) const;
 
+	void IncAmount(const double amount);
+	void DecAmount(const double amount);
+
 	friend ostream & operator<<(ostream &out, const DepositAccount &v);
 
 };

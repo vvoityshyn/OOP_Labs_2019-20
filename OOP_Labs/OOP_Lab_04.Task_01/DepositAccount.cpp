@@ -39,6 +39,7 @@ DepositAccount::~DepositAccount()
 
 const double DepositAccount::GetAmount() const
 {
+	printf("DepositAccount::GetAmount()\n");
 	return Account::GetAmount();
 }
 
@@ -50,6 +51,22 @@ const double DepositAccount::GetAmount(const Date &date) const
 	double n = this->N;
 	double p = p0 * pow(1 + r / n, n * t);
 	return p;
+}
+
+void DepositAccount::IncAmount(const double amount)
+{
+	printf("DepositAccount::IncAmount(const double %lf)\n", amount);
+
+	// TODO: DepositAccount::IncAmount();
+	Account::IncAmount(amount);
+}
+
+void DepositAccount::DecAmount(const double amount)
+{
+	printf("DepositAccount::DecAmount(const double %lf)\n", amount);
+
+	// TODO: DepositAccount::DecAmount()
+	Account::DecAmount(amount);
 }
 
 ostream & operator<<(ostream & out, const DepositAccount & account)

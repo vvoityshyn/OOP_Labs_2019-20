@@ -42,11 +42,14 @@ const char * Account::GetOwnerAddress() const
 
 const double Account::GetAmount() const
 {
+	printf("Account::GetAmount()\n");
 	return this->amount;
 }
 
 void Account::IncAmount(const double amount)
 {
+	printf("Account::IncAmount(const double %lf)\n", amount);
+
 	if (amount < 0)
 	{
 		throw "Incorrect amount";
@@ -56,6 +59,8 @@ void Account::IncAmount(const double amount)
 
 void Account::DecAmount(const double amount)
 {
+	printf("Account::DecAmount(const double %lf)\n", amount);
+
 	if (amount < 0)
 	{
 		throw "Incorrect amount";

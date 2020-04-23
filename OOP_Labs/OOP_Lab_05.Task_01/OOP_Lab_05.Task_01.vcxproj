@@ -115,15 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="CurrentAccount.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DepositAccount.cpp" />
+    <ClCompile Include="LoanAccount.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
+    <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="CurrentAccount.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="DepositAccount.h" />
+    <ClInclude Include="LoanAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

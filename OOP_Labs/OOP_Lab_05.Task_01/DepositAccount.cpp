@@ -17,7 +17,7 @@ DepositAccount::DepositAccount(
 		const char * ownerAddress, 
 		const double amount, 
 		const double rate, 
-		const Date & creationDate) : Account(identifier, ownerName, ownerAddress, amount)
+		const Date & creationDate) : BankAccount(identifier, ownerName, ownerAddress, amount)
 {
 	printf("DepositAccount::DepositAccount(const char * %s, const char * %s, const char * %s, const double %f, const double %f, const Date & creationDate)\n", identifier, ownerName, ownerAddress, amount, rate);
 
@@ -40,12 +40,12 @@ DepositAccount::~DepositAccount()
 const double DepositAccount::GetAmount() const
 {
 	printf("DepositAccount::GetAmount()\n");
-	return Account::GetAmount();
+	return CurrentAccount::GetAmount();
 }
 
 const double DepositAccount::GetAmount(const Date &date) const
 {
-	double p0 = Account::GetAmount();
+	double p0 = CurrentAccount::GetAmount();
 	double t = this->GetNumberOfWholeYears(*(this->creationDate), date);
 	double r = this->rate;
 	double n = this->N;
@@ -58,7 +58,7 @@ void DepositAccount::IncAmount(const double amount)
 	printf("DepositAccount::IncAmount(const double %lf)\n", amount);
 
 	// TODO: DepositAccount::IncAmount();
-	Account::IncAmount(amount);
+	CurrentAccount::IncAmount(amount);
 }
 
 void DepositAccount::DecAmount(const double amount)
@@ -66,7 +66,7 @@ void DepositAccount::DecAmount(const double amount)
 	printf("DepositAccount::DecAmount(const double %lf)\n", amount);
 
 	// TODO: DepositAccount::DecAmount()
-	Account::DecAmount(amount);
+	CurrentAccount::DecAmount(amount);
 }
 
 ostream & operator<<(ostream & out, const DepositAccount & account)
@@ -74,7 +74,7 @@ ostream & operator<<(ostream & out, const DepositAccount & account)
 	out
 		<< "Deposit bank account: " << endl
 		<< "\t" << "identifier:" << "\t" << account.GetIdentifier() << endl
-		<< "\t" << "owner name:" << "\t" << account.GetOwner() << endl
+		<< "\t" << "owner name:" << "\t" << account.GetOwnerName() << endl
 		<< "\t" << "owner address:" << "\t" << account.GetOwnerAddress() << endl
 		<< "\t" << "amount:" << "\t" << account.GetAmount() << endl
 		<< "\t" << "interest rate:" << "\t" << account.rate << endl;

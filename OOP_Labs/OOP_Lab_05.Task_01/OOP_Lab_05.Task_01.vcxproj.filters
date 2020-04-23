@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -27,15 +24,30 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoanAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DepositAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoanAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankAccount.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

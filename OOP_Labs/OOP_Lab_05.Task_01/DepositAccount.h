@@ -1,8 +1,8 @@
 #pragma once
-#include "Account.h"
+#include "BankAccount.h"
 #include "Date.h"
 
-class DepositAccount :	public Account
+class DepositAccount : public BankAccount
 {
 private:
 	double rate;

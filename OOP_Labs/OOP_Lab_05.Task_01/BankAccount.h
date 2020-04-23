@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Account
+class BankAccount
 {
 private:
 	// Account identifier (IBAN)
@@ -18,18 +18,13 @@ private:
 
 	char* CopyText(const char* source);
 public:
-	Account(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
-	virtual ~Account();
+	BankAccount(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
+	virtual ~BankAccount();
 
 	const char* GetIdentifier() const;
-	const char* GetOwner() const;
+	const char* GetOwnerName() const;
 	const char* GetOwnerAddress() const;
 
 	virtual const double GetAmount() const;
-
-	virtual void IncAmount(const double amount);
-	virtual void DecAmount(const double amount);
-
-	friend ostream & operator<<(ostream &out, const Account &v);
 };
 

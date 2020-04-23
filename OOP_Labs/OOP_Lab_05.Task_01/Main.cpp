@@ -28,10 +28,10 @@ void TestVirtualMethods() {
 	Date date(2020, 4, 16);
 
 	const int numberOfAccounts = 5;
-	Account* accounts[numberOfAccounts];
+	CurrentAccount* accounts[numberOfAccounts];
 
-	accounts[0] = new Account(identifier, ownerName, ownerAddress, amount);
-	accounts[1] = new Account(identifier, ownerName, ownerAddress, amount);
+	accounts[0] = new CurrentAccount(identifier, ownerName, ownerAddress, amount);
+	accounts[1] = new CurrentAccount(identifier, ownerName, ownerAddress, amount);
 	accounts[2] = new DepositAccount(identifier, ownerName, ownerAddress, amount, rate, creationDate);
 	accounts[3] = new DepositAccount(identifier, ownerName, ownerAddress, amount, rate, creationDate);
 	accounts[4] = new DepositAccount(identifier, ownerName, ownerAddress, amount, rate, creationDate);

@@ -19,7 +19,7 @@ private:
 	char* CopyText(const char* source);
 public:
 	Account(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
-	~Account();
+	virtual ~Account();
 
 	const char* GetIdentifier() const;
 	const char* GetOwner() const;

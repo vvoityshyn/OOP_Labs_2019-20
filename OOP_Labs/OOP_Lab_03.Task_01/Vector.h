@@ -38,6 +38,9 @@ public:
 	friend Vector operator*(const double number, const Vector &v);
 	friend Vector operator*(const Vector &v, const double number);
 
+	// ++
+	// --
+
 	friend bool operator<(const Vector &v1, const Vector &v2);
 	//friend bool operator>(const Vector &v1, const Vector &v2);
 	//friend bool operator<=(const Vector &v1, const Vector &v2);

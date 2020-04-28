@@ -26,6 +26,14 @@ BankAccount::~BankAccount()
 	cout << "BankAccount::~BankAccount()" << endl;
 }
 
+char* BankAccount::CopyText(const char* source)
+{
+	int bufferLength = strlen(source) + 1;
+	char* destination = new char[bufferLength];
+	strcpy_s(destination, bufferLength, source);
+	return destination;
+}
+
 const char * BankAccount::GetIdentifier() const
 {
 	return this->identifier;
@@ -45,4 +53,9 @@ const double BankAccount::GetAmount() const
 {
 	printf("BankAccount::GetAmount()\n");
 	return this->amount;
+}
+
+void BankAccount::TransferFunds(const double amount)
+{
+	this->amount += amount;
 }

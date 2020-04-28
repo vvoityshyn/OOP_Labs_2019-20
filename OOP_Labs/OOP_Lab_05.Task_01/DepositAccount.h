@@ -20,7 +20,7 @@ public:
 		const double rate,
 		const Date &creationDate);
 	
-	~DepositAccount();
+	~DepositAccount();	
 
 	const double GetAmount() const;
 
@@ -40,9 +40,9 @@ public:
 	*/
 	const double GetAmount(const Date &date) const;
 
-	void IncAmount(const double amount);
-	void DecAmount(const double amount);
+	void PutFunds(const double amount);
+	void WithdrawFunds(const double amount);
 
-	friend ostream & operator<<(ostream &out, const DepositAccount &v);
+	//friend ostream & operator<<(ostream &out, const DepositAccount &v);
 
 };

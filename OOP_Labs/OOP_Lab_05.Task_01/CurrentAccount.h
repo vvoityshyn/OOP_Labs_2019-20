@@ -11,9 +11,9 @@ public:
 	CurrentAccount(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
 	~CurrentAccount();
 
-	virtual void IncAmount(const double amount);
-	virtual void DecAmount(const double amount);
+	void PutFunds(const double amount);
+	void WithdrawFunds(const double amount);	
 
-	friend ostream & operator<<(ostream &out, const CurrentAccount &v);
+	//friend ostream & operator<<(ostream &out, const CurrentAccount &v);
 };
 

@@ -1,7 +1,8 @@
 ﻿#include <iostream>
 
-#include "Account.h"
+#include "BankAccount.h"
 #include "DepositAccount.h"
+#include "CurrentAccount.h"
 #include "Date.h"
 
 using namespace std;
@@ -28,7 +29,7 @@ void TestVirtualMethods() {
 	Date date(2020, 4, 16);
 
 	const int numberOfAccounts = 5;
-	CurrentAccount* accounts[numberOfAccounts];
+	BankAccount* accounts[numberOfAccounts];
 
 	accounts[0] = new CurrentAccount(identifier, ownerName, ownerAddress, amount);
 	accounts[1] = new CurrentAccount(identifier, ownerName, ownerAddress, amount);
@@ -37,7 +38,9 @@ void TestVirtualMethods() {
 	accounts[4] = new DepositAccount(identifier, ownerName, ownerAddress, amount, rate, creationDate);
 
 	for (int i = 0; i < numberOfAccounts; i++) {
-		accounts[i]->IncAmount(10 * (i + 1));
+		accounts[i]->PutFunds(10 * (i + 1));
+		double amount = accounts[i]->GetAmount();
+		cout << "Amount: " << amount << endl;
 	}
 
 	for (int i = 0; i < numberOfAccounts; i++) {

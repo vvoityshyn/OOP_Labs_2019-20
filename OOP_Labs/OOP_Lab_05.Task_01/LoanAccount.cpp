@@ -13,3 +13,25 @@ LoanAccount::~LoanAccount()
 {
 	cout << "LoanAccount::~LoanAccount()" << endl;
 }
+
+void LoanAccount::PutFunds(const double amount)
+{
+	printf("LoanAccount::PutFunds(const double %lf)\n", amount);
+
+	if (amount < 0)
+	{
+		throw "Incorrect amount";
+	}
+	this->TransferFunds(amount);
+}
+
+void LoanAccount::WithdrawFunds(const double amount)
+{
+	printf("LoanAccount::WithdrawFunds(const double %lf)\n", amount);
+
+	if (amount < 0)
+	{
+		throw "Incorrect amount";
+	}
+	this->TransferFunds((-1) * amount);
+}

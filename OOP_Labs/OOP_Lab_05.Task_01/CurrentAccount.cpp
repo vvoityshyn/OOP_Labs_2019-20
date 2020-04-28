@@ -12,40 +12,40 @@ CurrentAccount::~CurrentAccount()
 	cout << "CurrentAccount::~CurrentAccount()" << endl;
 }
 
-void CurrentAccount::IncAmount(const double amount)
+void CurrentAccount::PutFunds(const double amount)
 {
-	printf("CurrentAccount::IncAmount(const double %lf)\n", amount);
+	printf("CurrentAccount::PutFunds(const double %lf)\n", amount);
 
 	if (amount < 0)
 	{
 		throw "Incorrect amount";
 	}
-	this->amount += amount;
+	this->TransferFunds(amount);
 }
 
-void CurrentAccount::DecAmount(const double amount)
+void CurrentAccount::WithdrawFunds(const double amount)
 {
-	printf("CurrentAccount::DecAmount(const double %lf)\n", amount);
+	printf("CurrentAccount::WithdrawFunds(const double %lf)\n", amount);
 
 	if (amount < 0)
 	{
 		throw "Incorrect amount";
 	}
-	if (this->amount - amount < 0)
+	if (this->GetAmount() - amount < 0)
 	{
 		throw "Not enough money";
 	}
-	this->amount -= amount;
+	this->TransferFunds((-1) * amount);
 }
 
-ostream & operator<<(ostream & out, const CurrentAccount & account)
-{
-	out
-		<< "Current account: " << endl
-		<< "\t" << "identifier:" << "\t" << account.GetIdentifier() << endl
-		<< "\t" << "owner name:" << "\t" << account.GetOwnerName() << endl
-		<< "\t" << "owner address:" << "\t" << account.GetOwnerAddress() << endl
-		<< "\t" << "amount:" << "\t" << account.GetAmount() << endl;
-
-	return out;
-}
+//ostream & operator<<(ostream & out, const CurrentAccount & account)
+//{
+//	out
+//		<< "Current account: " << endl
+//		<< "\t" << "identifier:" << "\t" << account.GetIdentifier() << endl
+//		<< "\t" << "owner name:" << "\t" << account.GetOwnerName() << endl
+//		<< "\t" << "owner address:" << "\t" << account.GetOwnerAddress() << endl
+//		<< "\t" << "amount:" << "\t" << account.GetAmount() << endl;
+//
+//	return out;
+//}

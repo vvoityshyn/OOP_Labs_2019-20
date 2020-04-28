@@ -17,6 +17,10 @@ private:
 	double amount;
 
 	char* CopyText(const char* source);
+
+protected:
+	void TransferFunds(const double amount);
+
 public:
 	BankAccount(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
 	virtual ~BankAccount();
@@ -25,6 +29,9 @@ public:
 	const char* GetOwnerName() const;
 	const char* GetOwnerAddress() const;
 
-	virtual const double GetAmount() const;
+	const double GetAmount() const;
+
+	virtual void PutFunds(const double amount) = 0;
+	virtual void WithdrawFunds(const double amount) = 0;
 };
 

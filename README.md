@@ -8,3 +8,5 @@
 5. [Visual Studio project creation](https://drive.google.com/open?id=1hDoOGnij1tsAq9cTOTw20bfFyTHgPH1o)
 # UML Class Diagram for Lab-04
 ![UML Class Diagram for Lab-04](https://github.com/vvoityshyn/OOP_Labs_2019-20/blob/master/OOP_Labs/OOP_Lab_04.Task_01/lab-04-uml-class-diagram.png)
+# UML Class Diagram for Lab-05
+![UML Class Diagram for Lab-05](https://github.com/vvoityshyn/OOP_Labs_2019-20/blob/master/OOP_Labs/OOP_Lab_05.Task_01/lab-05-uml-class-diagram.png)

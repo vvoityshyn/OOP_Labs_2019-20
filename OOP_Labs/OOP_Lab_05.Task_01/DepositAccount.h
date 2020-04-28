@@ -11,6 +11,9 @@ private:
 protected:
 	// date2 - date1
 	const int GetNumberOfWholeYears(const Date &date1, const Date &date2) const;
+
+	void Print(ostream & out) const;
+
 public:
 	DepositAccount(
 		const char* identifier, 

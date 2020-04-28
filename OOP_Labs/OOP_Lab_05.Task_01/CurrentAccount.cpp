@@ -1,4 +1,5 @@
 #include "CurrentAccount.h"
+#include "string.h"
 
 CurrentAccount::CurrentAccount(const char * identifier, const char * ownerName, const char * ownerAddress, const double amount)
 	: BankAccount(identifier, ownerName, ownerAddress, amount)
@@ -37,6 +38,22 @@ void CurrentAccount::WithdrawFunds(const double amount)
 	}
 	this->TransferFunds((-1) * amount);
 }
+
+void CurrentAccount::Print(ostream & out) const
+{
+	out
+		<< "Current account: " << endl
+		<< "\t" << "identifier:" << "\t" << this->GetIdentifier() << endl
+		<< "\t" << "owner name:" << "\t" << this->GetOwnerName() << endl
+		<< "\t" << "owner address:" << "\t" << this->GetOwnerAddress() << endl
+		<< "\t" << "amount:" << "\t" << this->GetAmount() << endl;
+}
+
+//ostream & operator<<(ostream & out, const CurrentAccount & account)
+//{
+//	account.Print(out);
+//	return out;
+//}
 
 //ostream & operator<<(ostream & out, const CurrentAccount & account)
 //{

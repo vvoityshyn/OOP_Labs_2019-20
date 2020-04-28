@@ -35,3 +35,13 @@ void LoanAccount::WithdrawFunds(const double amount)
 	}
 	this->TransferFunds((-1) * amount);
 }
+
+void LoanAccount::Print(ostream & out) const
+{
+	out
+		<< "Loan account: " << endl
+		<< "\t" << "identifier:" << "\t" << this->GetIdentifier() << endl
+		<< "\t" << "owner name:" << "\t" << this->GetOwnerName() << endl
+		<< "\t" << "owner address:" << "\t" << this->GetOwnerAddress() << endl
+		<< "\t" << "amount:" << "\t" << this->GetAmount() << endl;
+}

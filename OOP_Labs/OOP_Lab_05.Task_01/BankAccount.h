@@ -21,6 +21,8 @@ private:
 protected:
 	void TransferFunds(const double amount);
 
+	virtual void Print(ostream & out) const = 0;
+
 public:
 	BankAccount(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
 	virtual ~BankAccount();
@@ -33,5 +35,8 @@ public:
 
 	virtual void PutFunds(const double amount) = 0;
 	virtual void WithdrawFunds(const double amount) = 0;
+
+	friend ostream & operator<<(ostream &out, const BankAccount &v);
+
 };
 

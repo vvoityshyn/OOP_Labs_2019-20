@@ -71,15 +71,13 @@ void DepositAccount::WithdrawFunds(const double amount)
 	throw "WithdrawFunds() cannot be applied to a deposit account";
 }
 
-//ostream & operator<<(ostream & out, const DepositAccount & account)
-//{
-//	out
-//		<< "Deposit bank account: " << endl
-//		<< "\t" << "identifier:" << "\t" << account.GetIdentifier() << endl
-//		<< "\t" << "owner name:" << "\t" << account.GetOwnerName() << endl
-//		<< "\t" << "owner address:" << "\t" << account.GetOwnerAddress() << endl
-//		<< "\t" << "amount:" << "\t" << account.GetAmount() << endl
-//		<< "\t" << "interest rate:" << "\t" << account.rate << endl;
-//
-//	return out;
-//}
+void DepositAccount::Print(ostream & out) const
+{
+	out
+		<< "Deposit bank account: " << endl
+		<< "\t" << "identifier:" << "\t" << this->GetIdentifier() << endl
+		<< "\t" << "owner name:" << "\t" << this->GetOwnerName() << endl
+		<< "\t" << "owner address:" << "\t" << this->GetOwnerAddress() << endl
+		<< "\t" << "amount:" << "\t" << this->GetAmount() << endl
+		<< "\t" << "interest rate:" << "\t" << this->rate << endl;
+}

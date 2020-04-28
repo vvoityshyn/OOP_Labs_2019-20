@@ -59,3 +59,9 @@ void BankAccount::TransferFunds(const double amount)
 {
 	this->amount += amount;
 }
+
+ostream & operator<<(ostream & out, const BankAccount & account)
+{
+	account.Print(out);
+	return out;
+}

@@ -7,6 +7,9 @@ class CurrentAccount : public BankAccount
 {
 private:
 
+protected:
+	void Print(ostream & out) const;
+
 public:
 	CurrentAccount(const char* identifier, const char* ownerName, const char* ownerAddress, const double amount);
 	~CurrentAccount();

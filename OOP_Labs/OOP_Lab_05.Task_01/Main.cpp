@@ -41,6 +41,7 @@ void TestVirtualMethods() {
 		accounts[i]->PutFunds(10 * (i + 1));
 		double amount = accounts[i]->GetAmount();
 		cout << "Amount: " << amount << endl;
+		cout << (*accounts[i]) << endl;
 	}
 
 	for (int i = 0; i < numberOfAccounts; i++) {

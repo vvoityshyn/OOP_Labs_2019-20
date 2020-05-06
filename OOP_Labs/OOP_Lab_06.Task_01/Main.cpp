@@ -1,14 +1,23 @@
 #include <iostream>
-#include "Queue.h"
+#include "QueueInt.h"
 
 using namespace std;
 
+void TestQueueInt();
 
 int main()
 {
 	cout << "OOP_Lab_06.Task_01" << endl;
 
-	Queue* q = new Queue();
+	TestQueueInt();
+
+	system("pause");
+	return 0;
+}
+
+void TestQueueInt()
+{
+	QueueInt* q = new QueueInt();
 
 	q->Push(1);
 	q->Push(2);
@@ -30,7 +39,4 @@ int main()
 	printf("Pop: item - %d | size - %d\n", item, q->GetSize());
 
 	delete q;
-
-	system("pause");
-	return 0;
 }

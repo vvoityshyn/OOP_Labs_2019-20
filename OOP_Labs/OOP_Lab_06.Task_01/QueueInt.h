@@ -1,22 +1,22 @@
 #pragma once
 
 #include <iostream>
-#include "QueueItem.h"
+#include "QueueItemInt.h"
 
 using namespace std;
 
-class Queue
+class QueueInt
 {
 private:
 	int size;
 
-	QueueItem* head;
-	QueueItem* tail;
+	QueueItemInt* head;
+	QueueItemInt* tail;
 
 	void DoCleanUp();
 public:
-	Queue();
-	~Queue();
+	QueueInt();
+	~QueueInt();
 
 	void Push(int item);
 	int Pop();

@@ -1,9 +1,9 @@
-#include "Queue.h"
+#include "QueueInt.h"
 
-void Queue::DoCleanUp()
+void QueueInt::DoCleanUp()
 {
-	QueueItem* item = this->head;
-	QueueItem* itemToDelete;
+	QueueItemInt* item = this->head;
+	QueueItemInt* itemToDelete;
 	while (item != nullptr)
 	{
 		itemToDelete = item;
@@ -12,7 +12,7 @@ void Queue::DoCleanUp()
 	}
 }
 
-Queue::Queue()
+QueueInt::QueueInt()
 {
 	cout << "Queue::Queue()" << endl;
 
@@ -22,32 +22,32 @@ Queue::Queue()
 }
 
 
-Queue::~Queue()
+QueueInt::~QueueInt()
 {	
 	DoCleanUp();
 	cout << "Queue::~Queue()" << endl;
 }
 
-void Queue::Push(int item)
+void QueueInt::Push(int item)
 {
 	if (0 == this->size)
 	{
 		// adding the 1st item
-		this->head = new QueueItem(item, nullptr);
+		this->head = new QueueItemInt(item, nullptr);
 		this->tail = head;
 		this->size = 1;
 	}
 	else
 	{
 		// adding the 2nd, 3rd, ... elements
-		QueueItem* newItem = new QueueItem(item, nullptr);
+		QueueItemInt* newItem = new QueueItemInt(item, nullptr);
 		this->tail->SetNext(newItem);
 		this->tail = newItem;
 		this->size += 1;
 	}
 }
 
-int Queue::Pop()
+int QueueInt::Pop()
 {
 	if (this->size <= 0)
 	{
@@ -56,7 +56,7 @@ int Queue::Pop()
 
 	if (1 == this->size)
 	{
-		QueueItem* item = this->head;
+		QueueItemInt* item = this->head;
 		this->head = nullptr;
 		this->tail = nullptr;
 		int itemValue = item->GetItem();
@@ -66,7 +66,7 @@ int Queue::Pop()
 	}
 	else
 	{
-		QueueItem* item = this->head;
+		QueueItemInt* item = this->head;
 		this->head = item->GetNext();
 		int itemValue = item->GetItem();
 		delete item;
@@ -75,24 +75,24 @@ int Queue::Pop()
 	}
 }
 
-int Queue::Peek() const
+int QueueInt::Peek() const
 {
 	if (this->size <= 0)
 	{
 		throw "No elements in the queue";
 	}
 
-	QueueItem* item = this->head;
+	QueueItemInt* item = this->head;
 	int itemValue = item->GetItem();
 	return itemValue;
 }
 
-int Queue::GetSize() const
+int QueueInt::GetSize() const
 {
 	return this->size;
 }
 
-void Queue::Clear()
+void QueueInt::Clear()
 {
 	DoCleanUp();
 }

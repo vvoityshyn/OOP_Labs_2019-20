@@ -1,18 +1,66 @@
 #include <iostream>
+#include "Queue.hpp"
 #include "QueueInt.h"
 
 using namespace std;
 
+template <typename T> void TestQueue(const int n, const T* items);
+void TestQueueChar();
 void TestQueueInt();
 
 int main()
 {
 	cout << "OOP_Lab_06.Task_01" << endl;
 
-	TestQueueInt();
+	double items[] = {1.1, 1.2, 1.3, 1.4, 1.5, 1.6};
+	TestQueue(6, items);
+
+	//TestQueueChar();
+	//TestQueueInt();
 
 	system("pause");
 	return 0;
+}
+
+template <typename T> void TestQueue(const int n, const T* items)
+{
+	Queue<T>* q = new Queue<T>();
+
+	for (int i = 0; i < n; i++)
+	{
+		q->Push(items[i]);
+	}
+
+	char item;
+
+	while (!q->IsEmpty())
+	{
+		item = q->Pop();
+		cout << "Pop: item - " << item << " | size - " << q->GetSize() << endl;
+	}
+
+	delete q;
+}
+
+void TestQueueChar()
+{
+	Queue<char>* q = new Queue<char>();
+
+	q->Push('a');
+	q->Push('b');
+	q->Push('c');
+	q->Push('d');
+	q->Push('e');
+
+	char item;
+
+	while (!q->IsEmpty())
+	{
+		item = q->Pop();
+		cout << "Pop: item - " << item << " | size - " << q->GetSize() << endl;
+	}
+
+	delete q;
 }
 
 void TestQueueInt()

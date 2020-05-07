@@ -120,7 +120,9 @@
     <ClCompile Include="QueueItemInt.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Queue.hpp" />
     <ClInclude Include="QueueInt.h" />
+    <ClInclude Include="QueueItem.hpp" />
     <ClInclude Include="QueueItemInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

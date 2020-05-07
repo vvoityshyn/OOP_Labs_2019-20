@@ -32,5 +32,11 @@
     <ClInclude Include="QueueItemInt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Queue.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueItem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

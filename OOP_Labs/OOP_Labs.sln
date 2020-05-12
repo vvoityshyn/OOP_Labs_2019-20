@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOP_Lab_01.Task_01", "OOP_Lab_01.Task_01\OOP_Lab_01.Task_01.vcxproj", "{41221DE8-8A5A-419C-9CD8-195002B7AD66}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOP_Lab_05.Task_01", "OOP_Lab_05.Task_01\OOP_Lab_05.Task_01.vcxproj", "{516A1FDC-1AE0-4FCA-B5F2-EE1A79429A71}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOP_Lab_06.Task_01", "OOP_Lab_06.Task_01\OOP_Lab_06.Task_01.vcxproj", "{46FAED76-99C0-49DA-A82D-4920109D2A29}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOP_Lab_07.Task_01", "OOP_Lab_07.Task_01\OOP_Lab_07.Task_01.vcxproj", "{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{46FAED76-99C0-49DA-A82D-4920109D2A29}.Release|x64.Build.0 = Release|x64
 		{46FAED76-99C0-49DA-A82D-4920109D2A29}.Release|x86.ActiveCfg = Release|Win32
 		{46FAED76-99C0-49DA-A82D-4920109D2A29}.Release|x86.Build.0 = Release|Win32
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Debug|x64.ActiveCfg = Debug|x64
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Debug|x64.Build.0 = Debug|x64
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Debug|x86.ActiveCfg = Debug|Win32
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Debug|x86.Build.0 = Debug|Win32
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Release|x64.ActiveCfg = Release|x64
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Release|x64.Build.0 = Release|x64
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Release|x86.ActiveCfg = Release|Win32
+		{7E781FA5-DBE9-455D-A2C5-1DE7BA8D70D8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,23 +1,13 @@
 #include "DepositAccount.h"
 
-const int DepositAccount::GetNumberOfWholeYears(const Date & date1, const Date & date2) const
-{
-	int year;
-	int month;
-	int day;
-
-	Date::Diff(date1, date2, &year, &month, &day);
-
-	return year;
-}
-
 DepositAccount::DepositAccount(
 		const char * identifier, 
 		const char * ownerName, 
 		const char * ownerAddress, 
 		const double amount, 
 		const double rate, 
-		const Date & creationDate) : BankAccount(identifier, ownerName, ownerAddress, amount)
+		const Date & creationDate,
+		DepositInterest* depositAmountFormula) : BankAccount(identifier, ownerName, ownerAddress, amount)
 {
 	printf("DepositAccount::DepositAccount(const char * %s, const char * %s, const char * %s, const double %f, const double %f, const Date & creationDate)\n", identifier, ownerName, ownerAddress, amount, rate);
 
@@ -26,9 +16,15 @@ DepositAccount::DepositAccount(
 		throw "Incorrect interest rate";
 	}
 
+	if (nullptr == depositAmountFormula)
+	{
+		throw "'depositAmountFormula' cannot be NULL";
+	}
+
 	this->rate = rate;
 
 	this->creationDate = new Date(creationDate);
+	this->depositInterest = depositAmountFormula;
 }
 
 DepositAccount::~DepositAccount()
@@ -44,12 +40,13 @@ const double DepositAccount::GetAmount() const
 }
 
 const double DepositAccount::GetAmount(const Date &date) const
-{
-	double p0 = this->GetAmount();
+{	
+	/*double p0 = this->GetAmount();
 	double t = this->GetNumberOfWholeYears(*(this->creationDate), date);
 	double r = this->rate;
 	double n = this->N;
-	double p = p0 * pow(1 + r / n, n * t);
+	double p = p0 * pow(1 + r / n, n * t);*/
+	double p = this->depositInterest->CalculateAmount(this->GetAmount(), this->rate, *(this->creationDate), date);
 	return p;
 }
 

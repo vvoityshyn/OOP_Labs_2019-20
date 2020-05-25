@@ -7,7 +7,7 @@
 using namespace std;
 
 void TestAccount();
-void TestDepositAccount();
+void TestDepositAccount_CompoundInterest();
 void TestMethodsInheritance();
 
 int main()
@@ -56,7 +56,7 @@ void TestAccount()
 	cout << account << endl;
 }
 
-void TestDepositAccount()
+void TestDepositAccount_CompoundInterest()
 {
 	char identifier[] = "UA213223130000026007233566001";
 	char ownerName[] = "John Smith";

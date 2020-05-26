@@ -124,6 +124,7 @@
     <ClInclude Include="QueueInt.h" />
     <ClInclude Include="QueueItem.hpp" />
     <ClInclude Include="QueueItemInt.h" />
+    <ClInclude Include="QueueIterator.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

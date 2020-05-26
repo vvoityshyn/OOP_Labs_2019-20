@@ -2,8 +2,11 @@
 
 #include <iostream>
 #include "QueueItem.hpp"
+//#include "QueueIterator.hpp"
 
 using namespace std;
+
+template <typename T> class QueueIterator;
 
 template <typename T> class Queue
 {
@@ -24,6 +27,10 @@ public:
 	int GetSize() const;
 	void Clear();
 	bool IsEmpty() const;
+
+	QueueIterator<T> Iterator();
+
+	template <typename T> friend class QueueIterator;
 };
 
 template <typename T> void Queue<T>::DoCleanUp()
@@ -126,4 +133,10 @@ template <typename T> void Queue<T>::Clear()
 template <typename T> bool Queue<T>::IsEmpty() const
 {
 	return (0 == this->size);
+}
+
+template <typename T> QueueIterator<T> Queue<T>::Iterator()
+{
+	QueueIterator<T> iterator(this);
+	return iterator;
 }

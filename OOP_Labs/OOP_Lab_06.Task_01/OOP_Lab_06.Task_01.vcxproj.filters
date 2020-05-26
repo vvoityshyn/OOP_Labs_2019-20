@@ -38,5 +38,8 @@
     <ClInclude Include="QueueItem.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="QueueIterator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
